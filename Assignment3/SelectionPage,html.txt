@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Location Selection</title>
+</head>
+<body>
+  <header>
+    <h1>Dropdown Selection</h1>
+  </header>
+
+  <main>
+    <form>
+      <label for="country">Country:</label><br />
+      <select id="country" name="country">
+        <option value="india" selected>India</option>
+        <option value="usa">United States</option>
+        <option value="japan">Japan</option>
+      </select><br /><br />
+
+      <label for="state">State:</label><br />
+      <select id="state" name="state">
+        <option value="maharashtra" selected>Maharashtra</option>
+        <option value="karnataka">Karnataka</option>
+        <option value="delhi">Delhi</option>
+      </select><br /><br />
+
+      <label for="city">City:</label><br />
+      <select id="city" name="city">
+        <option value="mumbai" selected>Mumbai</option>
+        <option value="pune">Pune</option>
+        <option value="bangalore">Bangalore</option>
+      </select><br /><br />
+
+      <label for="place">Favorite Tourist Place:</label><br />
+      <select id="place" name="place">
+        <option value="gateway" selected>Gateway of India</option>
+        <option value="marine">Marine Drive</option>
+        <option value="elephanta">Elephanta Caves</option>
+      </select>
+    </form>
+
+    <p>Summary: I selected <strong>India</strong>, state <strong>Maharashtra</strong>, city <strong>Mumbai</strong>, and favorite place <strong>Gateway of India</strong>.</p>
+  </main>
+
+  <footer>
+    <p>Selection recorded for demonstration only.</p>
+  </footer>
+</body>
+</html>
