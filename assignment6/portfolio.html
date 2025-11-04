@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Portfolio | Reema Sharma</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 40px;
+    }
+
+    header h1 {
+      font-size: 1.8em;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #1abc9c;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .about {
+      flex: 1;
+      max-width: 500px;
+    }
+
+    .about h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #2c3e50;
+    }
+    .about p {
+      line-height: 1.6;
+      font-size: 1.1em;
+    }
+    .profile-img {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .profile-img img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px 0;
+    }
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      main {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-img img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Reema Sharma</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="about">
+      <h2>About Me</h2>
+      <p>
+        Hello! I'm Reema Sharma, a passionate web developer focused on crafting clean, user-friendly, and modern web interfaces. I enjoy transforming creative ideas into functional and engaging digital experiences using HTML, CSS, and JavaScript.
+      </p>
+    </section>
+
+    <section class="profile-img">
+      <img src="https://via.placeholder.com/280" alt="Profile Image">
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Reema Sharma | All Rights Reserved
+  </footer>
+
+</body>
+</html>

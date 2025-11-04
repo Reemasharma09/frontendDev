@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Height and Width Practice Layout</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f9;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      width: 90%;
+    }
+    .box {
+      color: white;
+      padding: 10px;
+      text-align: center;
+      overflow: auto;
+      border-radius: 10px;
+    }
+    .box1 {
+      width: 200px;
+      height: 150px;
+      background-color: #3498db;
+    }
+    .box2 {
+      width: 40%;
+      min-height: 20vh;
+      max-width: 300px;
+      background-color: #e67e22;
+    }
+    .box3 {
+      width: 25em;
+      height: 10em;
+      background-color: #2ecc71;
+      min-height: 100px;
+      max-width: 500px;
+    }
+    .box:hover {
+      opacity: 0.85;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">
+      <strong>Box 1</strong><br>
+      Width: 200px<br>
+      Height: 150px
+    </div>
+    <div class="box box2">
+      <strong>Box 2</strong><br>
+      Width: 40%<br>
+      Min-Height: 20vh<br>
+      Max-Width: 300px
+    </div>
+    <div class="box box3">
+      <strong>Box 3</strong><br>
+      Width: 25em<br>
+      Height: 10em<br>
+      Overflow test:<br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel lorem at erat.
+    </div>
+  </div>
+</body>
+</html>
