@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Reema Sharma">
+  <title>Pseudo-Class Demonstration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      background: white;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .box:hover {
+      transform: scale(1.03);
+    }
+    a:hover {
+      color: white;
+      background-color: #007BFF;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    input:focus {
+      border: 2px solid #28a745;
+      outline: none;
+      box-shadow: 0 0 5px #28a745;
+    }
+    button:active {
+      background-color: #dc3545;
+      color: white;
+      transform: scale(0.95);
+    }
+    ul li:nth-child(even) {
+      background-color: #f0f8ff;
+    }
+    ul li:nth-child(odd) {
+      background-color: #fff8dc;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    li {
+      padding: 5px 10px;
+      border-radius: 4px;
+      margin: 3px 0;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pseudo-Class Demonstration</h1>
+  <div class="container">
+    <div class="box">
+      <p class="label">:hover Example</p>
+      <p>Move your mouse over this <a href="#">link</a> to see the color change.</p>
+    </div>
+    <div class="box">
+      <p class="label">:focus Example</p>
+      <p>Click inside this input field:</p>
+      <input type="text" placeholder="Focus me">
+    </div>
+    <div class="box">
+      <p class="label">:active Example</p>
+      <p>Click this button to see the effect:</p>
+      <button>Click Me</button>
+    </div>
+    <div class="box">
+      <p class="label">:nth-child() Example</p>
+      <p>Alternate background colors applied using <code>:nth-child()</code>:</p>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
