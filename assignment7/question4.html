@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadows and Depth Effect Layout</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      width: 260px;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    /* Different shadow styles */
+    .shadow1 {
+      box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .shadow2 {
+      box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .shadow3 {
+      box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+    }
+
+    /* Hover lift effect */
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Heading with text shadow */
+    h2 {
+      color: #333;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+      color: #666;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card shadow1">
+      <img src="https://via.placeholder.com/80" alt="Profile 1">
+      <h2>Card One</h2>
+      <p>Simple soft shadow for a light depth effect. Perfect for subtle UI cards.</p>
+    </div>
+    <div class="card shadow2">
+      <img src="https://via.placeholder.com/80" alt="Profile 2">
+      <h2>Card Two</h2>
+      <p>Medium glow-style shadow using a cool blue tint for a soft highlight.</p>
+    </div>
+    <div class="card shadow3">
+      <img src="https://via.placeholder.com/80" alt="Profile 3">
+      <h2>Card Three</h2>
+      <p>Strong shadow with warm tones for bold, elevated visual emphasis.</p>
+    </div>
+  </div>
+</body>
+</html>

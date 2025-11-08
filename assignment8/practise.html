@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Reema Sharma">
+  <title>CSS Selectors Practice Page</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fb;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    header, footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+    main {
+      padding: 20px 40px;
+    }
+    section {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+    }
+    h2 {
+      color: #333;
+    }
+    p {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .highlight {
+      background-color: #fff3cd;
+      border-left: 4px solid #ffcc00;
+      padding: 8px;
+    }
+    #special {
+      color: #007bff;
+      font-weight: bold;
+    }
+    a[target="_blank"] {
+      color: #28a745;
+      text-decoration: underline;
+    }
+    section > p {
+      font-style: italic;
+    }
+    h3 + p {
+      color: #d63384;
+    }
+    h4 ~ p {
+      color: #6f42c1;
+    }
+    ul li a {
+      color: #ff5733;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSS Selectors Practice Page</h1>
+    <p>Understanding Element, Class, ID, Attribute, and Combinator Selectors</p>
+  </header>
+  <main>
+    <section>
+      <h2>1. Element Selector</h2>
+      <p>This is a normal paragraph styled using the <strong>element selector</strong>.</p>
+      <p>All &lt;p&gt; elements share the same text color and spacing.</p>
+    </section>
+    <section>
+      <h2>2. Class Selector</h2>
+      <p class="highlight">This paragraph has a yellow background using the <strong>class selector</strong>.</p>
+      <p class="highlight">You can apply this style to multiple elements using the same class.</p>
+    </section>
+    <section>
+      <h2>3. ID Selector</h2>
+      <p id="special">This text is styled using the <strong>ID selector</strong> (#special).</p>
+      <p>IDs should be unique to each element on a page.</p>
+    </section>
+    <section>
+      <h2>4. Attribute Selector</h2>
+      <p>Visit 
+        <a href="https://www.google.com" target="_blank">Google</a> or 
+        <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a> 
+        — both links are styled via the <strong>attribute selector</strong>.
+      </p>
+    </section>
+    <section>
+      <h2>5. Combinator Selectors</h2>
+      <h3>Child and Sibling Example</h3>
+      <p>This paragraph is a direct child of section (styled with the ">" selector).</p>
+      <p>Paragraph immediately after &lt;h3&gt; is pink (using "+").</p>
+      <h4>General sibling example:</h4>
+      <p>This paragraph and others after h4 are purple (using "~").</p>
+      <p>Here’s another one also affected by "~".</p>
+      <ul>
+        <li><a href="#">List Link 1</a></li>
+        <li><a href="#">List Link 2</a></li>
+        <li><a href="#">List Link 3</a></li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 CSS Selectors Practice Page | Created by Reema Sharma</p>
+  </footer>
+</body>
+</html>

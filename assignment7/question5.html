@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced CSS Selectors Demonstration</title>
+  <style>
+    /* ===== Basic Page Styling ===== */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      margin: 0;
+      padding: 30px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* ===== ATTRIBUTE SELECTORS ===== */
+    /* Style input elements with a specific type attribute */
+    input[type="text"] {
+      border: 2px solid #3498db;
+      padding: 8px;
+      border-radius: 5px;
+    }
+
+    /* Style links that start with "https" */
+    a[href^="https"] {
+      color: #27ae60;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Style links that contain "example" in URL */
+    a[href*="example"] {
+      color: #e67e22;
+    }
+
+    /* ===== PSEUDO-CLASSES ===== */
+    /* Change color when hovered */
+    a:hover {
+      text-decoration: underline;
+      color: #2980b9;
+    }
+
+    /* Change border color when input is focused */
+    input:focus {
+      outline: none;
+      border-color: #9b59b6;
+      box-shadow: 0 0 5px rgba(155, 89, 182, 0.5);
+    }
+
+    /* Style every odd list item using :nth-child() */
+    li:nth-child(odd) {
+      background-color: #ecf0f1;
+    }
+
+    /* ===== PSEUDO-ELEMENTS ===== */
+    /* Add text before and after list container */
+    ul::before {
+      content: "★ Start of List ★";
+      display: block;
+      text-align: center;
+      color: #9b59b6;
+      margin-bottom: 10px;
+    }
+
+    ul::after {
+      content: "★ End of List ★";
+      display: block;
+      text-align: center;
+      color: #9b59b6;
+      margin-top: 10px;
+    }
+
+    /* ===== COMBINATORS ===== */
+    /* Descendant Selector: Style <p> inside .info-box */
+    .info-box p {
+      color: #555;
+      font-size: 0.95em;
+    }
+
+    /* Child Selector: Style only direct <p> children of .info-box */
+    .info-box > p {
+      font-weight: bold;
+      color: #2c3e50;
+    }
+
+    /* Adjacent Sibling Selector (+): Style the element immediately after <h2> */
+    h2 + p {
+      color: #e74c3c;
+      font-style: italic;
+    }
+
+    /* General Sibling Selector (~): Style all <p> that follow an <h3> */
+    h3 ~ p {
+      color: #16a085;
+    }
+
+    /* ===== CARD BOX for Layout ===== */
+    .info-box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    ul {
+      padding: 0;
+      list-style: none;
+      margin: 20px 0;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1>Advanced CSS Selectors Demonstration</h1>
+
+  <div class="info-box">
+    <h2>Attribute Selectors & Pseudo-Classes</h2>
+    <p>This paragraph comes right after the heading (styled using <code>h2 + p</code>).</p>
+
+    <input type="text" placeholder="Focus me to see the effect!" />
+    <p>Visit some links below to see attribute selectors in action:</p>
+
+    <a href="https://www.example.com">Example Secure Link</a><br>
+    <a href="http://www.testsite.com">Non-Secure Link</a><br>
+    <a href="https://openai.com">OpenAI (HTTPS Link)</a>
+  </div>
+
+  <div class="info-box">
+    <h3>Pseudo-elements & Combinators</h3>
+    <p>Direct paragraph child of .info-box (styled using <code>.info-box > p</code>).</p>
+    <p>Following paragraphs (styled using <code>h3 ~ p</code>).</p>
+
+    <ul>
+      <li>Item 1 - Odd</li>
+      <li>Item 2 - Even</li>
+      <li>Item 3 - Odd</li>
+      <li>Item 4 - Even</li>
+    </ul>
+  </div>
+
+</body>
+</html>
