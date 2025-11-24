@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Registration</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #0084ff;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #006ad1;
+    }
+    .message {
+      margin-top: 15px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+    }
+    .success {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>User Registration</h2>
+
+  <input type="text" id="name" placeholder="Enter Name">
+  <input type="email" id="email" placeholder="Enter Email">
+
+  <button onclick="registerUser()">Register</button>
+
+  <div id="msg" class="message"></div>
+
+  <script>
+    const BASE_URL = "http://localhost:3006/users";
+
+    async function registerUser() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const msgBox = document.getElementById("msg");
+
+      msgBox.innerHTML = "";
+      msgBox.className = "message";
+
+      if (!name || !email) {
+        msgBox.innerHTML = "All fields are required.";
+        msgBox.classList.add("error");
+        return;
+      }
+
+      try {
+        const response = await axios.get(`${BASE_URL}?email=${email}`);
+
+        if (response.data.length > 0) {
+          msgBox.innerHTML = "Email already registered.";
+          msgBox.classList.add("error");
+          return;
+        }
+        await axios.post(BASE_URL, {
+          name: name,
+          email: email
+        });
+
+        msgBox.innerHTML = "Registration Successful!";
+        msgBox.classList.add("success");
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+
+      } catch (error) {
+        msgBox.innerHTML = "Error connecting to server.";
+        msgBox.classList.add("error");
+      }
+    }
+  </script>
+</body>
+</html>

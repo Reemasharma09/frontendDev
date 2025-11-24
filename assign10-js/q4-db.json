@@ -1,0 +1,25 @@
+{
+  "users": [
+    { "id": 1, "name": "Rohan" },
+    { "id": 2, "name": "Megha" },
+    { "id": 3, "name": "Kartik" },
+    { "id": 4, "name": "Simran" },
+    { "id": 5, "name": "Tarun" }
+  ],
+
+  "orders": [
+    { "id": 1, "amount": 500 },
+    { "id": 2, "amount": 1200 },
+    { "id": 3, "amount": 799 },
+    { "id": 4, "amount": 2000 },
+    { "id": 5, "amount": 1499 }
+  ],
+
+  "products": [
+    { "id": 1, "title": "Book" },
+    { "id": 2, "title": "Laptop" },
+    { "id": 3, "title": "Shoes" },
+    { "id": 4, "title": "Headphones" },
+    { "id": 5, "title": "T-shirt" }
+  ]
+}
