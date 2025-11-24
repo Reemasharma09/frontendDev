@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q4 - Custom Form Builder</title>
+</head>
+<body>
+<h2>Q4 - Dynamic Form Builder</h2>
+<div id="formArea"></div>
+<pre id="result"></pre>
+
+
+<script>
+class FormBuilder {
+constructor(fields = []){ this.fields = fields }
+
+
+// render form into container as innerHTML
+render = (containerId) => {
+const container = document.getElementById(containerId);
+const html = `
+<form id="dynForm">
+${this.fields.map(f=>`<label>${f.label}: <input name="${f.name}" type="${f.type||'text'}" /></label><br/>`).join('')}
+<button type="submit">Submit</button>
+</form>`;
+container.innerHTML = html;
+document.getElementById('dynForm').addEventListener('submit', (e)=>{
+e.preventDefault();
+const data = this.getFormData('dynForm');
+document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+});
+}
+
+
+// collect form values and return object
+getFormData = (formId) => {
+const f = document.getElementById(formId);
+const formData = new FormData(f);
+const obj = {};
+for(const [k,v] of formData.entries()) obj[k] = v;
+return obj;
+}
+}
+
+
+const fields = [
+{name:'username', label:'Username', type:'text'},
+{name:'email', label:'Email', type:'email'},
+{name:'age', label:'Age', type:'number'}
+];
+
+
+const fb = new FormBuilder(fields);
+fb.render('formArea');
+</script>
+</body>
+</html>

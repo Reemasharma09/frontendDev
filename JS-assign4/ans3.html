@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q3 - Library System</title>
+</head>
+<body>
+<h2>Q3 - Library Management</h2>
+<div>
+<label>Search ISBN to issue: <input id="isbnSearch" /></label>
+<button id="issueBtn">Issue Book</button>
+</div>
+<h3>Available Books</h3>
+<ul id="available"></ul>
+
+
+<script>
+class Book {
+constructor(title, author, isbn){
+this.title = title; this.author = author; this.isbn = isbn; this.isIssued = false;
+}
+issueBook = () => { if(!this.isIssued) this.isIssued = true; else throw new Error('Already issued'); }
+returnBook = () => { this.isIssued = false; }
+}
+
+
+const books = [
+new Book('1984','Orwell','ISBN001'),
+new Book('JS Guide','M. Dev','ISBN002'),
+new Book('CSS Tricks','L. UI','ISBN003')
+];
+
+
+const renderAvailable = () => {
+const ul = document.getElementById('available'); ul.innerHTML = '';
+books.filter(b=>!b.isIssued).forEach(b=>{
+const li = document.createElement('li');
+li.textContent = `${b.title} — ${b.author} (${b.isbn})`;
+ul.appendChild(li);
+});
+}
+
+
+document.getElementById('issueBtn').addEventListener('click', () => {
+const isbn = document.getElementById('isbnSearch').value.trim();
+try{
+const book = books.find(b=>b.isbn === isbn);
+if(!book) throw new Error('ISBN not found');
+book.issueBook();
+alert(`Issued: ${book.title}`);
+renderAvailable();
+} catch(err){ alert(err.message) }
+});
+
+
+renderAvailable();
+</script>
+</body>
+</html>
