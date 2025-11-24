@@ -1,0 +1,56 @@
+<!doctype html>
+<h2>Q2 - Student Registration</h2>
+<form id="studentForm" novalidate>
+<label>Name<input id="name" /></label><div id="nameMsg" class="msg"></div>
+<label>Email<input id="email" /></label><div id="emailMsg" class="msg"></div>
+<label>Phone<input id="phone" /></label><div id="phoneMsg" class="msg"></div>
+<label>Password<input id="password" type="password" /></label><div id="pwdMsg" class="msg"></div>
+<button type="submit">Register</button>
+</form>
+<script>
+// Utility validators using RegExp
+const validators = {
+name: v => /^[A-Za-z\s]+$/.test(v),
+email: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v),
+phone: v => /^\d{10}$/.test(v),
+password: v => /(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}/.test(v)
+};
+
+
+const form = document.getElementById('studentForm');
+
+
+// show validation result in DOM (red border + message or green)
+const show = (el, ok, msgEl, message) => {
+if(ok){ el.classList.remove('error'); el.classList.add('valid'); msgEl.textContent = '' }
+else { el.classList.remove('valid'); el.classList.add('error'); msgEl.textContent = message }
+}
+
+
+form.addEventListener('submit', e => {
+e.preventDefault();
+const nameEl = document.getElementById('name');
+const emailEl = document.getElementById('email');
+const phoneEl = document.getElementById('phone');
+const pwdEl = document.getElementById('password');
+
+
+const nameOk = validators.name(nameEl.value.trim());
+const emailOk = validators.email(emailEl.value.trim());
+const phoneOk = validators.phone(phoneEl.value.trim());
+const pwdOk = validators.password(pwdEl.value);
+
+
+show(nameEl, nameOk, document.getElementById('nameMsg'), 'Only alphabets allowed');
+show(emailEl, emailOk, document.getElementById('emailMsg'), 'Invalid email');
+show(phoneEl, phoneOk, document.getElementById('phoneMsg'), 'Enter 10 digits');
+show(pwdEl, pwdOk, document.getElementById('pwdMsg'), 'Pwd: 1 uppercase,1 number,1 special, min 8 chars');
+
+
+if(nameOk && emailOk && phoneOk && pwdOk){
+alert('Registration successful!');
+}
+});
+</script>
+</body>
+</html>
