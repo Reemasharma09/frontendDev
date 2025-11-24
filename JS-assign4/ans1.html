@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q1 - Product Manager</title>
+<style>body{font-family:Arial;padding:16px;} .product{margin:8px 0;padding:8px;border:1px solid #ddd}</style>
+</head>
+<body>
+<h2>Q1 - E-Commerce Product Manager</h2>
+<div id="output"></div>
+
+
+<script>
+// Product class with ES6 syntax
+class Product {
+constructor(id, name, price, category){
+this.id = id;
+this.name = name;
+this.price = price;
+this.category = category;
+}
+
+
+// apply a percentage discount (e.g., 10)
+applyDiscount = (percent) => {
+this.price = +(this.price * (1 - percent/100)).toFixed(2);
+}
+
+
+// formatted product details
+details = () => `#${this.id} ${this.name} — ₹${this.price} (${this.category})`;
+}
+
+
+// create products and store in array
+const products = [
+new Product(1, 'Phone X', 25000, 'Electronics'),
+new Product(2, 'T-Shirt', 799, 'Apparel'),
+new Product(3, 'Laptop Pro', 75000, 'Electronics'),
+new Product(4, 'Coffee Mug', 299, 'Home')
+];
+
+
+// apply 10% discount to a sample product
+products[0].applyDiscount(10);
+
+
+// filter products with price > 1000 and print to console
+const expensive = products.filter(p => p.price > 1000);
+console.log('Products > 1000:', expensive.map(p=>p.details()));
+
+
+// show all products in DOM
+const out = document.getElementById('output');
+products.forEach(p => {
+const div = document.createElement('div');
+div.className = 'product';
+div.textContent = p.details();
+out.appendChild(div);
+});
+</script>
+</body>
+</html>

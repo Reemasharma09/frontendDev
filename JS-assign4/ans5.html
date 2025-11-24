@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Q5 - Movie Booking</title>
+<style>.err{color:#e74c3c}</style>
+</head>
+<body>
+<h2>Q5 - Movie Ticket Booking</h2>
+<form id="bookForm">
+<label>Name<input id="mName" /></label><div id="nErr" class="err"></div>
+<label>Email<input id="mEmail" /></label><div id="eErr" class="err"></div>
+<label>Seats<input id="mSeats" type="number" /></label><div id="sErr" class="err"></div>
+<button>Book</button>
+</form>
+<pre id="ticket"></pre>
+
+
+<script>
+const isAlpha = v => /^[A-Za-z\s]+$/.test(v);
+const isEmail = v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+const bookForm = document.getElementById('bookForm');
+
+
+bookForm.addEventListener('submit', e => {
+e.preventDefault();
+const name = document.getElementById('mName').value.trim();
+const email = document.getElementById('mEmail').value.trim();
+const seats = Number(document.getElementById('mSeats').value);
+
+
+let ok = true;
+document.getElementById('nErr').textContent = '';
+document.getElementById('eErr').textContent = '';
+document.getElementById('sErr').textContent = '';
+
+
+if(!isAlpha(name)){ document.getElementById('nErr').textContent = 'Invalid name'; ok=false }
+if(!isEmail(email)){ document.getElementById('eErr').textContent = 'Invalid email'; ok=false }
+if(!Number.isInteger(seats) || seats <1 || seats>10){ document.getElementById('sErr').textContent = 'Seats must be 1-10'; ok=false }
+
+
+if(ok){
+const ticket = { name, email, seats };
+document.getElementById('ticket').textContent = `Ticket:\n${JSON.stringify(ticket, null, 2)}`;
+}
+});
+</script>
+</body>
+</html>
