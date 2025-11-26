@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Q1 - Product List Manager</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #productInput { width: 300px; padding:8px; }
+    button { margin-left: 6px; }
+    ul { list-style: none; padding:0; margin-top:12px; max-width:420px; }
+    li { padding:8px; border:1px solid #ddd; margin-bottom:6px; display:flex; align-items:center; justify-content:space-between; }
+    .controls button { margin-left:6px; }
+    .editing input { width:70%; padding:6px; }
+  </style>
+</head>
+<body>
+  <h2>Product List Manager</h2>
+  <input id="productInput" placeholder="Enter product name" />
+  <button id="addBtn">Add</button>
+
+  <ul id="productList" aria-live="polite"></ul>
+
+  <script src="q1.js"></script>
+</body>
+</html>

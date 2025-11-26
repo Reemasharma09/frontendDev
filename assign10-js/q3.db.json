@@ -1,0 +1,34 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Buy groceries",
+      "priority": "Low",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "title": "Prepare project report",
+      "priority": "High",
+      "completed": true
+    },
+    {
+      "id": 3,
+      "title": "Clean the house",
+      "priority": "Medium",
+      "completed": false
+    },
+    {
+      "id": 4,
+      "title": "Pay electricity bill",
+      "priority": "High",
+      "completed": false
+    },
+    {
+      "id": 5,
+      "title": "Doctor Appointment",
+      "priority": "Low",
+      "completed": true
+    }
+  ]
+}
